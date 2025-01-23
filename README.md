@@ -33,5 +33,9 @@ Simple ${VARIABLE} routines that only do text replacements
 	vars.add_dict( os.environ )
 	s = vars.resolve("${HOME}")
 	print("your home direcory is: %s"  % s )
-	
+
+* Built in Unit test
+	cd variables
+	python3 variables.py
+		
 

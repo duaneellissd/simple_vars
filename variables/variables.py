@@ -392,7 +392,7 @@ def _test_case13():
     s = v.resolve("Your HOME dir is ${HOME}")
     print("Result: %s" % s)
 
-if __name__ == '__main__':
+def unit_test():
     '''
     Unit test for this module is here.
     '''
@@ -410,4 +410,9 @@ if __name__ == '__main__':
     _test_case12()
     _test_case13()
     print("var selftest complete")
+
+if __name__ == '__main__':
+   unit_test()
+   sys.exit(0)
+
     
