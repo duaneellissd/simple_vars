@@ -1,41 +1,49 @@
 # simple_vars
-Simple ${VARIABLE} routines that only do text replacements
+Simple `${VARIABLE}` routines that only do text replacements
 
 * Basic Text base variables
-
+	```python
 	s = "A ${BOY} and his ${DOG}"
-	vars = Variables()
-	vars.define( "BOY", "Zack" )
-	vars.defined("DOG", "scout")
+	my_vars = Variables()
+	my_vars.add("BOY","Zack")
+	my_vars.add("DOG","scout")
 
-	result = vars.resolve( s )
+	result = my_vars.resolve( s )
 	print("result: %s" % result )
+	```
 
     Should produce:
+	```bash
 	"A Zack and his scout"
+	```
 
 * Going further there are other features:
-
+	```python
 	d = some_dict_of_vars()
-	vars = Variables()
-	vars.add_var_dict( d )
+	my_vars = Variables()
+	my_vars.add_var_dict(d)
+	```
 
 * And..
-	vars = Variables()
+	```python
+	my_vars = Variables()
 	# There are a number of functions you can use
-	vars.add("ROOT_DIR", "${os.path.abspath("~/project/foo")}" )
-	s = vars.resolve("${ROOT_DIR}/config.file")
+	my_vars.add("ROOT_DIR","${os.path.abspath("~/project/foo")}" )
+	s = my_vars.resolve("${ROOT_DIR}/config.file")
 	print("CFG file is: %s" % s )
+	```
 
 * And
+	```python
 	import os
-	vars = Variables()
-	vars.add_dict( os.environ )
-	s = vars.resolve("${HOME}")
+	my_vars = Variables()
+	my_vars.add_dict(os.environ)
+	s = my_vars.resolve("${HOME}")
 	print("your home direcory is: %s"  % s )
+	```
 
 * Built in Unit test
+	```bash
 	cd variables
 	python3 variables.py
-		
-
+	```
