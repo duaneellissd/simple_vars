@@ -96,7 +96,7 @@ class Var_UndefinedFunc( VarError ):
     '''
     Raised when an undefined variable function is called.
     '''
-    def __init( self,   name : str, history : list ):
+    def __init__( self,   name : str, history : list ):
         VarError.__init__( self, VarError.UNDEF_FUNC, "undefined function: %s" % name, history )
         self.name = name
 
