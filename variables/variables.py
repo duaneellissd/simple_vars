@@ -5,7 +5,6 @@ import inspect
 
 # So functions in these work..
 import os
-import stat
 
 def my_extension(  s : str ):
     parts = os.path.splitext(s)
@@ -15,10 +14,10 @@ def no_extension(  s : str ):
     return parts[0]
 
 def stat_st_mtime( s : str ):
-    s = stat(s)
+    s = os.stat(s)
     return s.st_mtime
 def stat_st_size( s : str ):
-    s = stat(s)
+    s = os.stat(s)
     return s.st_size
 
 
